@@ -1,0 +1,103 @@
+body {
+  font-family: "Oleo Script", cursive;
+}
+h1 {
+  color: rgb(43, 7, 40);
+  font-size: 40px;
+  font-style: oblique;
+}
+h2{color: rgb(85, 66, 66);}
+h5 {
+  text-decoration: underline;
+}
+
+p {
+  line-height: 0.5;
+  margin-top: -50px;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: radial-gradient(
+    328px at 2.9% 15%,
+    rgb(191, 224, 251) 0%,
+    rgb(232, 233, 251) 25.8%,
+    rgb(252, 239, 250) 50.8%,
+    rgb(234, 251, 251) 77.6%,
+    rgb(240, 251, 244) 100.7%
+  );
+  padding: 0%;
+}
+.card-body {
+  margin: 0%;
+}
+
+.first {
+  position: relative;
+
+  bottom: 34em;
+  left: 20em;
+}
+.form-inline {
+  position: relative;
+  left: 19em;
+  top: 81px;
+  padding: 20px;
+}
+.card-img-top {
+  width: 70%;
+  border-top-left-radius: calc(-0.75rem - 1px);
+  border-top-right-radius: calc(16.25rem - 1px);
+}
+.city {
+  border: 6px solid black;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.cloudy {
+  color: darkgray;
+  /* border: solid; */
+  position: relative;
+  top: -20px;
+  left: 150px;
+  font-size: 52px;
+}
+
+.sunny {
+  color: rgb(241, 220, 23);
+}
+.rainy {
+  color: rgb(43, 96, 241);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0a807aa3;
+  border-color: black;
+  border-width: medium;
+}
+.one {
+  width: 100%;
+  font-size: 30px;
+
+  border: 6px solid black;
+  border-radius: 2px;
+  text-align: center;
+
+  color: #fff;
+  background-color: #0a807aa3;
+  border-color: black;
+  border-width: medium;
+}
+#f,
+#c,
+#unit {
+  font-size: 20px;
+  position: relative;
+  bottom: 11px;
+}
+
+.locateB {position: relative;
+    left: 570px;
+    top: 17px;}

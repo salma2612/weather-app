@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather template</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b96ecc4326.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-inline" id="gosearch">
+        <input
+          type="text"
+          id="searchcity"
+          class="form-control mb-2 mr-sm-2"
+          id="inlineFormInputName2"
+          placeholder="City"
+        />
+        <button class="btn btn-primary">Search</button>
+      </form>
+      <button class="btn btn-primary locateB">current location</button>
+      <div class="card" style="width: 18rem">
+        <h1 class="card-text city">Paris</h1>
+        <img src="sky.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h1 class="card-text date">Today ⛅</h1>
+          <h2>Description:</h2>
+          <div class="one">
+            🌡<span id="changedTemp"> 20&deg</span>
+            <a id="c" href="#"> &degC </a> <span id="unit">|</span>
+            <a id="f" href="#"> &degF </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row first">
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <i class="fas fa-sun cloudy sunny"></i>
+              <p class="card-text">Sunny spells</p>
+              <a href="#" class="btn btn-primary">🌡28&deg;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <i class="fas fa-cloud cloudy"></i>
+              <p class="card-text">Cloudy conundrum</p>
+              <a href="#" class="btn btn-primary">🌡-8&deg;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row first">
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Wednesday</h5>
+
+              <i class="fas fa-cloud-rain cloudy rainy"></i>
+
+              <p class="card-text">Rainy day</p>
+              <a href="#" class="btn btn-primary">🌡17&deg;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Thursday</h5>
+              <i class="fas fa-sun cloudy sunny"></i>
+              <p class="card-text">Sunny spells</p>
+              <a href="#" class="btn btn-primary">🌡28&deg;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row first">
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <i class="fas fa-cloud-rain cloudy rainy"></i>
+              <p class="card-text">Rainy day</p>
+              <a href="#" class="btn btn-primary">🌡10&deg;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <i class="fas fa-cloud cloudy"></i>
+              <p class="card-text">Cloudy conundrum</p>
+              <a href="#" class="btn btn-primary">🌡4&deg;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://github.com/salma2612/weather-app" target="_blank">
+      Open source-code</a
+    >
+  </body>
+  <script src="index.js"></script>
+</html>
