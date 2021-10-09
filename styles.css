@@ -6,14 +6,12 @@ h1 {
   font-size: 40px;
   font-style: oblique;
 }
-h2{color: rgb(85, 66, 66);}
 h5 {
   text-decoration: underline;
 }
 
 p {
   line-height: 0.5;
-  margin-top: -50px;
   margin-bottom: 1rem;
 }
 
@@ -34,14 +32,8 @@ p {
 
 .first {
   position: relative;
-
-  bottom: 34em;
-  left: 20em;
 }
 .form-inline {
-  position: relative;
-  left: 19em;
-  top: 81px;
   padding: 20px;
 }
 .card-img-top {
@@ -58,9 +50,6 @@ p {
 .cloudy {
   color: darkgray;
   /* border: solid; */
-  position: relative;
-  top: -20px;
-  left: 150px;
   font-size: 52px;
 }
 
@@ -94,10 +83,4 @@ p {
 #c,
 #unit {
   font-size: 20px;
-  position: relative;
-  bottom: 11px;
 }
-
-.locateB {position: relative;
-    left: 570px;
-    top: 17px;}
