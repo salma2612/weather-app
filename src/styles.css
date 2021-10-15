@@ -1,10 +1,10 @@
 body {
-  font-family: "Oleo Script", cursive;
+  font-family: "Oleo Script", cursive; color: azure;
 }
 h1 {
-  color: rgb(43, 7, 40);
+  
   font-size: 40px;
-  font-style: oblique;
+  
 }
 h5 {
   text-decoration: underline;
