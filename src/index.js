@@ -52,6 +52,9 @@ function getapi(location) {
 
   let wind = document.querySelector(".wind");
   wind.innerHTML = `Wind speed: ${location.data.wind.speed} km/h`
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
   console.log (location.data)
 }
