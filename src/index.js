@@ -56,7 +56,10 @@ function getapi(location) {
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
-  console.log (location.data)
+  console.log(location.data)
+  
+  let icon = document.querySelector(".icon");
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${location.data.weather[0].icon}@2x.png`);
 }
 
 let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
