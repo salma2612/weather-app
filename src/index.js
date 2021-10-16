@@ -42,7 +42,7 @@ function getapi(location) {
   let currentCity = document.querySelector(".city");
   currentCity.innerHTML = cityLocation;
 
-  let roundedtemp = Math.round(location.data.main.temp);
+  roundedtemp = Math.round(location.data.main.temp);
   let changedtemp = document.getElementById("changedTemp");
   changedtemp.innerHTML = ` ${roundedtemp}&deg `;
 
@@ -51,18 +51,22 @@ function getapi(location) {
   weatherDescription.innerHTML = description;
 
   let wind = document.querySelector(".wind");
-  wind.innerHTML = `Wind speed: ${location.data.wind.speed} km/h`
+  wind.innerHTML = `Wind speed: ${location.data.wind.speed} km/h`;
 
   let humidity = document.querySelector(".humidity");
-  humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`
+  humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`;
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
-  console.log(location.data)
-  
+  console.log(location.data);
+
   let icon = document.querySelector(".icon");
-  icon.setAttribute("src", `http://openweathermap.org/img/wn/${location.data.weather[0].icon}@2x.png`);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${location.data.weather[0].icon}@2x.png`
+  );
 }
 
 let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
+let roundedtemp = null; //created temperature variable as global variable so it can be accessed everywhere to make unit conversion to f and c easier
 
 function navigate() {
   navigator.geolocation.getCurrentPosition(getposition);
@@ -82,3 +86,31 @@ function getposition(position) {
 //let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=${apiKey}`;
 
 //axios.get(url).then(getapi)
+let f = document.querySelector("#f");
+f.addEventListener("click", flink);
+
+let c = document.querySelector("#c");
+c.addEventListener("click", clink);
+
+
+function clink(event) {
+  event.preventDefault();
+  //add active class on celsius and remove it on fahrenhight
+  f.classList.remove("active");
+  c.classList.add("active");
+  let ctemp = document.querySelector("#changedTemp");
+  ctemp.innerHTML = `${roundedtemp}&deg`;
+}
+
+
+function flink(event) {
+  event.preventDefault();
+//remove active class on celsius and add it to fahrenhight
+  c.classList.remove("active");
+  f.classList.add("active");
+  let ftemp = document.querySelector("#changedTemp");
+  let fconvert = Math.round((roundedtemp * 9) / 5 + 32);
+  ftemp.innerHTML = `${fconvert}&deg`;
+}
+
+

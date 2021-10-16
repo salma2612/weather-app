@@ -74,8 +74,12 @@ p {
     /* border-color: black; */
     /* border-width: medium; */
 }
-#f,
-#c,
-#unit {
-  font-size: 20px;
+span#unit {
+    position: relative;
+    bottom: 37px;
+    font-size: 20px;
 }
+
+.active {color: rgb(5, 5, 5); cursor: default;}
+
+.active:hover{text-decoration: none;color: rgb(5, 5, 5);}
