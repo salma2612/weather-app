@@ -50,7 +50,10 @@ function getapi(location) {
   let weatherDescription = document.querySelector("h2");
   weatherDescription.innerHTML = description;
 
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = `Wind speed: ${location.data.wind.speed} km/h`
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
+  console.log (location.data)
 }
 
 let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
