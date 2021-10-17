@@ -22,6 +22,10 @@ let minutes = addZero(now.getMinutes());
 let date = document.querySelector(".date");
 date.innerHTML = `${day} ${hour}:${minutes}`;
 
+let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
+let roundedtemp = null; //created temperature variable as global
+//variable so it can be accessed everywhere to make unit conversion to f and c easier
+
 function form(event) {
   event.preventDefault();
   let search = document.querySelector("#searchcity");
@@ -29,11 +33,16 @@ function form(event) {
   //city.innerHTML = search.value;
   //console.log(search.value);
   let cityname = search.value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=${apiKey}`;
+  searchCity(cityname);
+}
+function searchCity(city) {
+  
+
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   axios.get(url).then(getapi);
 }
-
+searchCity("Paris");
 let go = document.querySelector("form");
 go.addEventListener("submit", form);
 
@@ -65,8 +74,7 @@ function getapi(location) {
   );
 }
 
-let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
-let roundedtemp = null; //created temperature variable as global variable so it can be accessed everywhere to make unit conversion to f and c easier
+
 
 function navigate() {
   navigator.geolocation.getCurrentPosition(getposition);
