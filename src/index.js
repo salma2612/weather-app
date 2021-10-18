@@ -34,6 +34,8 @@ function form(event) {
   //console.log(search.value);
   let cityname = search.value;
   searchCity(cityname);
+  f.classList.remove("active");
+  c.classList.add("active");
 }
 function searchCity(city) {
   
@@ -41,6 +43,7 @@ function searchCity(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   axios.get(url).then(getapi);
+  
 }
 searchCity("Paris");
 let go = document.querySelector("form");
@@ -65,7 +68,7 @@ function getapi(location) {
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`;
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
-  console.log(location.data);
+  
 
   let icon = document.querySelector(".icon");
   icon.setAttribute(
@@ -87,6 +90,9 @@ function getposition(position) {
   let long = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
   axios.get(url).then(getapi);
+  //👇will automatitcally put active class on c as default temp is in celsius
+  f.classList.remove("active"); 
+  c.classList.add("active");
 }
 //let navigate = navigator.geolocation.getCurrentPosition(getposition);
 
