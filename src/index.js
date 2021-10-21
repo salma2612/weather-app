@@ -1,3 +1,31 @@
+function getforcastt(params) {
+  let forecastt = document.querySelector("#forecastt");
+  console.log(forecastt);
+  let forecasttHTML = `<div class="row first">`;
+  let days = ["thu", "frid", "sat", "sun"];
+  days.forEach(function (day) {
+    forecasttHTML =
+      forecasttHTML +
+      `
+            <div class="col-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">${day}</h5>
+                  <i class="fas fa-sun cloudy sunny"></i>
+                  <p class="card-text">Sunny spells</p>
+                  <a href="#" class="btn btn-primary">🌡28&deg;</a>
+
+
+                  
+                </div>
+              </div>
+            </div>`;
+  });
+
+  forecastt.innerHTML = forecasttHTML + `</div>`;
+}
+getforcastt();
+
 function addZero(x) {
   if (x < 10) {
     x = "0" + x;
@@ -38,12 +66,9 @@ function form(event) {
   c.classList.add("active");
 }
 function searchCity(city) {
-  
-
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   axios.get(url).then(getapi);
-  
 }
 searchCity("Paris");
 let go = document.querySelector("form");
@@ -68,7 +93,6 @@ function getapi(location) {
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `Humidity: ${location.data.main.humidity}%`;
   //let city = document.querySelector(".city"); city.innerHTML = location.data.name;
-  
 
   let icon = document.querySelector(".icon");
   icon.setAttribute(
@@ -76,8 +100,6 @@ function getapi(location) {
     `http://openweathermap.org/img/wn/${location.data.weather[0].icon}@2x.png`
   );
 }
-
-
 
 function navigate() {
   navigator.geolocation.getCurrentPosition(getposition);
@@ -91,7 +113,7 @@ function getposition(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
   axios.get(url).then(getapi);
   //👇will automatitcally put active class on c as default temp is in celsius
-  f.classList.remove("active"); 
+  f.classList.remove("active");
   c.classList.add("active");
 }
 //let navigate = navigator.geolocation.getCurrentPosition(getposition);
@@ -106,7 +128,6 @@ f.addEventListener("click", flink);
 let c = document.querySelector("#c");
 c.addEventListener("click", clink);
 
-
 function clink(event) {
   event.preventDefault();
   //add active class on celsius and remove it on fahrenhight
@@ -116,15 +137,12 @@ function clink(event) {
   ctemp.innerHTML = `${roundedtemp}&deg`;
 }
 
-
 function flink(event) {
   event.preventDefault();
-//remove active class on celsius and add it to fahrenhight
+  //remove active class on celsius and add it to fahrenhight
   c.classList.remove("active");
   f.classList.add("active");
   let ftemp = document.querySelector("#changedTemp");
   let fconvert = Math.round((roundedtemp * 9) / 5 + 32);
   ftemp.innerHTML = `${fconvert}&deg`;
 }
-
-
