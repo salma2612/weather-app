@@ -83,3 +83,15 @@ span#unit {
 .active {color: rgb(5, 5, 5); cursor: default;}
 
 .active:hover{text-decoration: none;color: rgb(5, 5, 5);}
+
+#dailyTemp {font-size: 49px;}
+span#max {
+    position: relative;
+    right: -49px;
+    bottom: 56px;
+    color: black;
+}span#min {
+    position: relative;
+    top: 9px;
+    color: black;
+}

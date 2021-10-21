@@ -1,31 +1,58 @@
 function getforcastt(response) {
-  console.log (response.data.daily)
+  let dailyf = response.data.daily
   let forecastt = document.querySelector("#forecastt");
   
   let forecasttHTML = `<div class="row first">`;
-  let days = ["thu", "frid", "sat", "sun"];
-  days.forEach(function (day) {
-    forecasttHTML =
-      forecasttHTML +
-      `
+  
+  dailyf.forEach(function (day, index) {
+    if (index < 6) {
+      
+    
+      forecasttHTML =
+        forecasttHTML +
+        `
             <div class="col-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">${day}</h5>
-                  <i class="fas fa-sun cloudy sunny"></i>
-                  <p class="card-text">Sunny spells</p>
-                  <a href="#" class="btn btn-primary">🌡28&deg;</a>
+                  <h5 class="card-title">${formatDay(day.dt)}</h5>
+                  <p class="card-text">${day.weather[0].description}</p>
+                   <img src=" http://openweathermap.org/img/wn/${day.weather[0].icon
+        }@2x.png" class="icon"/>
+                    <span id = "dailyTemp">${Math.round(day.temp.day)}&deg</span>
+                     <span id="max"> max ${Math.round(
+          day.temp.max
+        )}&deg </span> <span id="min"> min ${Math.round(
+          day.temp.min
+        )}&deg</span> 
+
+                  
+                  
 
 
                   
                 </div>
               </div>
             </div>`;
+    }
   });
 
   forecastt.innerHTML = forecasttHTML + `</div>`;
 }
 //getforcastt();
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000)
+  let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  ]; let day = date.getDay();
+  return days[day]
+}
 
 function addZero(x) {
   if (x < 10) {
