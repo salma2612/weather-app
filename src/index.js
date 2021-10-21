@@ -1,6 +1,7 @@
-function getforcastt(params) {
+function getforcastt(response) {
+  console.log (response.data.daily)
   let forecastt = document.querySelector("#forecastt");
-  console.log(forecastt);
+  
   let forecasttHTML = `<div class="row first">`;
   let days = ["thu", "frid", "sat", "sun"];
   days.forEach(function (day) {
@@ -24,7 +25,7 @@ function getforcastt(params) {
 
   forecastt.innerHTML = forecasttHTML + `</div>`;
 }
-getforcastt();
+//getforcastt();
 
 function addZero(x) {
   if (x < 10) {
@@ -70,6 +71,15 @@ function searchCity(city) {
 
   axios.get(url).then(getapi);
 }
+
+function getDailyForecast(coordinates) {
+  console.log(coordinates);
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&units=metric&appid=${apiKey}`;
+  
+  axios.get(apiURL).then(getforcastt);
+
+}
+
 searchCity("Paris");
 let go = document.querySelector("form");
 go.addEventListener("submit", form);
@@ -99,6 +109,8 @@ function getapi(location) {
     "src",
     `http://openweathermap.org/img/wn/${location.data.weather[0].icon}@2x.png`
   );
+
+  getDailyForecast(location.data.coord)
 }
 
 function navigate() {
