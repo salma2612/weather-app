@@ -1,9 +1,10 @@
 body {
-  font-family: "Oleo Script", cursive; color: azure;
+  font-family: "Oleo Script", cursive; color: azure; 
 }
+h2, p::first-letter{text-transform: capitalize;}
 h1 {
   
-  font-size: 40px;
+  font-size: 34px;
   
 }
 h2, h3 {
@@ -21,6 +22,7 @@ p {
 
   .card {
   background: linear-gradient(109.5deg, rgb(9, 17, 87) 9.4%, rgb(86, 255, 248) 78.4%);
+  box-shadow: 9px 3px 16px #135d61f5;
 }
 
 .card-body {
@@ -34,7 +36,7 @@ p {
   padding: 20px;
 }
 .card-img-top {
-  width: 51%;
+  width: 54%;
   border-top-left-radius: calc(-0.75rem - 1px);
   border-top-right-radius: calc(16.25rem - 1px);
 }
@@ -44,24 +46,14 @@ p {
   text-align: center;
 }
 
-.cloudy {
-  color: darkgray;
-  /* border: solid; */
-  font-size: 52px;
-}
 
-.sunny {
-  color: rgb(241, 220, 23);
-}
-.rainy {
-  color: rgb(43, 96, 241);
-}
 
 .btn-primary {
-  color: #fff;
-  background-color: #17a2b8e6;
-  border-color: black;
-  border-width: medium;
+    color: #fff;
+    background-color: #000;
+    border-color: azure;
+  
+    border-bottom-width: thick;
 }
 .one {
     /* width: 100%; */

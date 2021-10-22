@@ -5,7 +5,7 @@ function getforcastt(response) {
   let forecasttHTML = `<div class="row first">`;
   
   dailyf.forEach(function (day, index) {
-    if (index < 6) {
+    if (0<index && index < 7) {
       
     
       forecasttHTML =
@@ -76,7 +76,7 @@ let hour = now.getHours();
 let minutes = addZero(now.getMinutes());
 
 let date = document.querySelector(".date");
-date.innerHTML = `${day} ${hour}:${minutes}`;
+date.innerHTML = `Updated: ${day} ${hour}:${minutes}`;
 
 let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
 let roundedtemp = null; //created temperature variable as global
