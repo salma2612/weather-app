@@ -11,7 +11,7 @@ function getforcastt(response) {
       forecasttHTML =
         forecasttHTML +
         `
-            <div class="col-6">
+            <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">${formatDay(day.dt)}</h5>
@@ -23,7 +23,7 @@ function getforcastt(response) {
           day.temp.max
         )}&deg </span> <span id="min"> min ${Math.round(
           day.temp.min
-        )}&deg</span> 
+        )}&deg </span> 
 
                   
                   

@@ -33,10 +33,10 @@ p {
   position: relative;
 }
 .form-inline {
-  padding: 20px;
+  padding: 2px;
 }
 .card-img-top {
-  width: 54%;
+  width: 46%;
   border-top-left-radius: calc(-0.75rem - 1px);
   border-top-right-radius: calc(16.25rem - 1px);
 }
